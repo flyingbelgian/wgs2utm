@@ -42,4 +42,4 @@ class Source():
     def write_csv(self):
         new_data = pandas.DataFrame(self.coords)
         new_file = self.file.strip(".csv")+"_converted.csv"
-        new_data.to_csv(new_file)
+        new_data.to_csv(new_file, index=False)
