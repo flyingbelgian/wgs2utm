@@ -2,16 +2,15 @@ import pandas
 import utm
 from tkinter import filedialog
 
-
 class Source():
     def __init__(self):
         self.file = filedialog.askopenfilename(title="Select source file to be converted")
 
     def read_csv(self):
-        """Read all coordinates from excel file and save them as a new dataframe"""
+        '''Read all coordinates from excel file and save them as a new dataframe'''
         data = pandas.read_csv(self.file)
         self.coords = []
-        for entry, row in data.iterrows():
+        for entry,row in data.iterrows():
             lat_sign = 1
             lon_sign = 1
             if row['Lat Dir'] == 'S':
